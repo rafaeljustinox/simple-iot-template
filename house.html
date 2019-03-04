@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <title>House</title>
+  </head>
+  <script>
+  var socket = io();
+  console.log('House Executing');
+
+
+  // Handler of received event
+  socket.on('lampada', function(value){
+    $('#lampada').html(value);
+  });
+  
+  </script>
+  <body>
+    <div>
+      <h3>Justino's virtual IOT</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Status</th>
+            <th>Object</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="lampada">on</td>
+            <td>Lampada</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html
